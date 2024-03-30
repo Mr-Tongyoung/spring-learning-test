@@ -26,7 +26,8 @@ public class MemberController {
     @GetMapping("/members")
     public ResponseEntity<List<Member>> read() {
         // TODO: 저장된 모든 member 정보를 반환한다.
-        return null;
+        List<Member> allMembers = new ArrayList<>(members);
+        return ResponseEntity.ok(allMembers);
     }
 
     @PutMapping("/members/{id}")
